@@ -141,113 +141,163 @@ span.highlight {
     border-radius: 10px;
 }
 
+/* --- BẢNG MÀU VÀ ĐỊNH NGHĨA PHONG CÁCH RETRO VINTAGE --- */
+
 :root {
-    --primary-blue: #003366; /* Xanh đậm chuyên nghiệp */
-    --accent-blue: #007bff;  /* Xanh sáng tạo điểm nhấn */
-    --white: #ffffff;
-    --light-gray: #f4f7f9;
+    --primary-brown: #4E342E;  /* Nâu đậm cổ điển (như màu cà phê) cho tiêu đề */
+    --accent-brown: #C19A6B;   /* Nâu cát (điểm nhấn nhẹ nhàng) cho các đường kẻ, viền */
+    --text-color: #5D4037;     /* Nâu trung bình cho văn bản chính (làm dịu mắt) */
+    --bg-paper: #FDF5E6;       /* Màu kem nhạt (như giấy cũ/da dê) cho nền chính */
+    --sidebar-cream: #F3E5DC;  /* Màu kem đậm hơn cho Sidebar, tạo sự phân chia mượt mà */
+    
+    /* Font family */
+    --font-heading: 'Playfair Display', serif; /* Phông tiêu đề cổ điển */
+    --font-subheading: 'Montserrat', sans-serif; /* Phông không chân hiện đại */
+    --font-body: 'Lora', serif;      /* Phông văn bản có chân thanh lịch */
 }
 
-/* Cấu trúc tổng thể */
+/* Cài đặt cơ bản */
+body {
+    background-color: #D7CCC8; /* Màu nền phía ngoài CV, nâu nhạt hơn nữa */
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 30px 0;
+}
+
+/* --- CẤU TRÚC CONTAINER CV --- */
 .resume-container {
     width: 100%;
     max-width: 950px;
     display: flex;
-    background: var(--white);
-    margin: 20px auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: var(--bg-paper);
+    margin: 0 auto;
+    box-shadow: 0 10px 40px rgba(93, 64, 55, 0.15); /* Bóng nâu nhẹ */
     min-height: 1000px;
     position: relative;
     overflow: hidden;
-    color: #333;
+    border: 1px solid #E0D4C8; /* Thêm viền mỏng xung quanh */
 }
 
-/* Sidebar bên trái (Màu xanh) */
+/* --- CỘT SIDEBAR BÊN TRÁI (MÀU KEM ĐẬM) --- */
 .sidebar {
     width: 35%;
-    background-color: var(--primary-blue);
-    color: var(--white);
-    padding: 40px 30px;
+    background-color: var(--sidebar-cream);
+    color: var(--text-color);
+    padding: 50px 30px;
+    border-right: 1px solid #E0D4C8; /* Viền nâu nhạt chia cột */
 }
 
+/* Ảnh đại diện - Giữ viền tròn nhưng đổi màu viền sang nâu sáng */
 .sidebar img {
     width: 100%;
     max-width: 180px;
+    height: auto;
+    object-fit: cover;
     border-radius: 50%;
-    border: 4px solid var(--accent-blue);
-    margin-bottom: 20px;
+    border: 4px solid var(--accent-brown); /* Viền màu nâu sáng */
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+/* Tiêu đề tên (H1) */
 .sidebar h1 {
-    font-size: 32px;
+    font-family: var(--font-heading);
+    font-size: 36px;
+    color: var(--primary-brown);
     line-height: 1.1;
     margin: 15px 0;
+    font-weight: 700;
 }
 
+/* Tagline dưới tên (P) */
+.sidebar .tagline {
+    font-family: var(--font-subheading);
+    color: var(--primary-brown);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Các link trong Sidebar (Email, Github...) */
 .sidebar a {
-    color: var(--white);
+    color: var(--text-color);
     text-decoration: none;
     font-size: 14px;
     display: block;
     margin-bottom: 8px;
+    border-bottom: 1px solid transparent; /* Chuẩn bị cho hiệu ứng hover */
+    transition: all 0.3s ease;
 }
 
-/* Nội dung bên phải (Trắng) */
+.sidebar a:hover {
+    color: var(--primary-brown);
+    border-bottom: 1px solid var(--accent-brown); /* Hiệu ứng gạch chân chạy ra */
+}
+
+/* --- CỘT NỘI DUNG CHÍNH BÊN PHẢI (MÀU KEM NHẠT) --- */
 .main-content {
     width: 65%;
-    padding: 40px;
+    padding: 50px 40px;
+    position: relative;
 }
 
+/* Tiêu đề các phần (SECTION TITLES) - Chuyển sang Nâu Đậm, có gạch chân cổ điển */
 .section-title {
-    font-size: 18px;
-    color: var(--primary-blue);
-    border-bottom: 2px solid var(--primary-blue);
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: var(--primary-brown);
+    border-bottom: 2px solid var(--primary-brown);
     display: inline-block;
-    margin: 25px 0 15px 0;
+    margin: 30px 0 15px 0;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* Career Cards (Mục tiêu nghề nghiệp) */
+/* Career Cards (Bố cục theo mẫu: thẻ) - Giữ cấu trúc cũ nhưng thay màu nền sang kem nhẹ hơn */
 .career-container {
     display: flex;
     gap: 15px;
+    margin-top: 15px;
 }
 
 .career-card {
     flex: 1;
-    background: var(--light-gray);
+    background: var(--bg-paper);
     padding: 15px;
-    border-left: 4px solid var(--accent-blue);
+    border-left: 4px solid var(--accent-brown);
+    border: 1px solid #E0D4C8; /* Viền nâu mỏng bao quanh */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.03); /* Bóng đổ rất nhẹ */
 }
 
 .career-card h4 {
-    margin: 0 0 8px 0;
-    color: var(--primary-blue);
+    color: var(--primary-brown);
+    font-family: var(--font-subheading);
     font-size: 13px;
+    font-weight: 700;
 }
 
-/* Kỹ năng & Kinh nghiệm */
-.skill-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding-left: 20px;
+/* Tag năm học (YEAR) - Chuyển màu nền sang nâu đậm chuyên nghiệp */
+.year {
+    background: var(--primary-brown);
+    color: var(--bg-paper); /* Chữ màu kem trên nền nâu */
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    font-family: var(--font-subheading);
 }
 
-.exp-item {
-    margin-bottom: 20px;
-    padding-left: 15px;
-    border-left: 2px solid #ddd;
-}
-
-/* Hiệu ứng đường kẻ chéo trang trí */
+/* Hiệu ứng đường kẻ chéo trang trí - Đổi màu từ xanh sang nâu sáng */
 .diagonal-lines {
     position: absolute;
-    bottom: -30px;
-    right: -30px;
-    width: 150px;
-    height: 150px;
-    background: repeating-linear-gradient(45deg, var(--accent-blue), var(--accent-blue) 1px, transparent 1px, transparent 8px);
-    opacity: 0.2;
+    bottom: -40px;
+    right: -40px;
+    width: 180px;
+    height: 180px;
+    background: repeating-linear-gradient(45deg, var(--accent-brown), var(--accent-brown) 1px, transparent 1px, transparent 8px);
+    opacity: 0.15; /* Giảm độ mờ để tinh tế hơn */
 }
