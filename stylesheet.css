@@ -145,7 +145,7 @@ span.highlight {
 
 :root {
     --primary-brown: #4E342E;  /* Nâu đậm cổ điển (như màu cà phê) cho tiêu đề */
-    --accent-brown: #C19A6B;   /* Nâu cát (điểm nhấn nhẹ nhàng) cho các đường kẻ, viền */
+       /* Nâu cát (điểm nhấn nhẹ nhàng) cho các đường kẻ, viền */
     --text-color: #5D4037;     /* Nâu trung bình cho văn bản chính (làm dịu mắt) */
     --bg-paper: #FDF5E6;       /* Màu kem nhạt (như giấy cũ/da dê) cho nền chính */
     --sidebar-cream: #F3E5DC;  /* Màu kem đậm hơn cho Sidebar, tạo sự phân chia mượt mà */
